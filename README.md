@@ -14,8 +14,6 @@ This project aims to create a customer banking system that enables users to mana
 
 # Functionality Summary
 
-Functionality Summary:
-
 1. create_savings_account(balance, interest_rate, months):
     - Imports the Account class from Accounts.py.
     - Creates an instance of Account with provided balance and interest rate.
