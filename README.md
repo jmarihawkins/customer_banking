@@ -1,6 +1,6 @@
 # Overview
 
-This project aims to create a customer banking system that enables users to manage savings and CD (Certificate of Deposit) accounts. Users can input account details such as balance, interest rates, and duration, and the system will calculate interest earned and update account balances accordingly.
+This purpose of this project is to develop a customer banking system utilizing Python scripting. This system enables users to efficiently manage their savings and Certificate of Deposit (CD) accounts. It streamlines the process of inputting account specifics such as balances, interest rates, and durations, thereafter automatically computing interest earned and updating account balances accordingly.
 
 # Files Summary
 
