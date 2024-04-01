@@ -37,3 +37,11 @@ This purpose of this project is to develop a customer banking system utilizing P
     - Calls respective functions to calculate interest and update balances.
     - Displays interest earned and updated account balances for both accounts.
     - Executes the program.
+
+4. get_valid_input(prompt):
+
+    - Validate user input to ensure it's a valid numerical value.
+    - Requests user input with a specified prompt message.
+    - Removes spaces and commas from the input to handle formatting issues.
+    - Checks if the input consists of digits and at most one decimal point.
+    - Raises exceptions and provides error messages for invalid inputs.
