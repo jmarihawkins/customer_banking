@@ -10,7 +10,7 @@ This purpose of this project is to develop a customer banking system utilizing P
 
 3. cd_account.py: Implements the create_cd_account function. This function creates a CD account instance, calculates interest earned based on user input, updates the account balance with earned interest, and returns the updated balance and interest earned.
 
-4. customer_banking.py: Implements the main functionality. It imports create_savings_account and create_cd_account functions, prompts users to input account details, calls the appropriate functions to calculate interest and update balances, and displays the results.
+4. customer_banking.py: Implements the main functionality. It imports create_savings_account and create_cd_account functions, prompts users to input account details, calls the appropriate functions to calculate interest and update balances, and displays the results. Additionally, 'get_valid_input(prompt)' ensures valid user input by handling spaces, commas, and providing error messages for invalid inputs.
 
 # Functionality Summary
 
