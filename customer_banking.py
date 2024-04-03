@@ -9,14 +9,33 @@ def get_valid_input(prompt):
         cleaned_input = user_input.replace(' ', '').replace(',', '')  # Remove spaces and commas
         try:
             # Check if input contains only digits and at most one decimal point
-            if not cleaned_input.replace('.', '', 1).isdigit():
+            if not cleaned_input.replace('.', '', 1).replace('-', '', 1).isdigit():  # Added '-' for negative numbers
                 raise ValueError("Invalid input. Please enter a valid numerical value without letters or special characters.")
             # Check if there are multiple decimal points
             if cleaned_input.count('.') > 1:
                 raise ValueError("Invalid input. Please enter a valid numerical value without multiple decimal points.")
-            return float(cleaned_input)  # Convert cleaned input to float
+            if '-' in cleaned_input and cleaned_input.index('-') != 0:
+                raise ValueError("Invalid input. Numbers cannot have special characters or hyphens.")
+            result = float(cleaned_input)  # Convert cleaned input to float
+            if result < 0:  # If the input is negative
+                raise ValueError("Invalid input. Please enter a non-negative numerical value.")
+            if '.' in cleaned_input:  # If the input contains a decimal point
+                decimal_index = cleaned_input.index('.')  # Find the index of the decimal point
+                decimal_digits = len(cleaned_input) - decimal_index - 1  # Count the number of decimal digits
+                if decimal_digits > 2:  # If there are more than 2 decimal digits
+                    result = round(result, 2)  # Round to the nearest 2 digits after the decimal point
+            return result
         except ValueError as e:
-            print(f"Error: {e}. Please try again.")
+            if "letters" in str(e):
+                print("Error: Input should only contain numerical values.")
+            elif "multiple decimal points" in str(e):
+                print("Error: Input should contain only one decimal point.")
+            elif "non-negative" in str(e):
+                print("Error: Input should be a non-negative numerical value.")
+            elif "special characters" in str(e):
+                print("Error: Numbers cannot have special characters or hyphens.")
+            else:
+                print(f"Error: {e}. Please try again.")
 
 def main():
     """This function prompts the user to enter the savings and CD account balance, interest rate,

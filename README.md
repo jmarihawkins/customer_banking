@@ -40,8 +40,8 @@ The purpose of this project is to develop a customer banking system utilizing Py
 
 4. get_valid_input(prompt):
 
-    - Validate user input to ensure it's a valid numerical value.
-    - Requests user input with a specified prompt message.
-    - Removes spaces and commas from the input to handle formatting issues.
-    - Checks if the input consists of digits and at most one decimal point.
-    - Raises exceptions and provides error messages for invalid inputs.
+    - Removes spaces and commas for consistency.
+    - Checks for digits and a single decimal point.
+    - Changes cleaned input to a float.
+    - Rounds to the nearest 2 digits after the decimal point if needed.
+    - Provides clear error messages and prompts for retry.
